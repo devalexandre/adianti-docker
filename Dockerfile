@@ -13,7 +13,14 @@ COPY --from=mlocati/php-extension-installer /usr/bin/install-php-extensions /usr
 
 # Install PHP extensions as needed
 # For example: pdo_mysql for database connectivity
-RUN install-php-extensions pdo pdo_mysql  sqlite3 pdo_sqlite
+RUN install-php-extensions \
+    pdo_mysql \
+    mysqli \
+    pdo_sqlite \
+    sqlite3 \
+    mbstring \
+    intl \
+    gd
 
 # Enable Apache mod_rewrite if needed
 RUN a2enmod rewrite
