@@ -1,0 +1,17 @@
+version: "3.9"
+
+services:
+  php-apache:
+    build: .
+    container_name: adianti-framework
+    ports:
+      - "8080:80"
+    volumes:
+      - .:/var/www/html
+    #environment:
+    # Example environment variables (if needed)
+    # APP_ENV: local
+    # DB_HOST: mysql
+    # DB_USER: root
+    # DB_PASSWORD: secret
+    restart: always
